@@ -1,0 +1,24 @@
+<h1>Liste des articles</h1>
+<table border="1">
+    <tr>
+        <td>Nom</td>
+        <td>Catégorie</td>
+        <td>Designation</td>
+        <td>Quantité</td>
+        <td>Prix</td>
+
+    </tr>
+    {% for a in listeArticles %}
+    <tr>
+        <td>{{ a.nom }}</td>
+        <td>{{ a.categorie }}</td>
+        <td>{{ a.designation }}</td>
+        <td>{{ a.qte }}</td>
+        <td>{{ a.prix }}</td>
+        <td><a href ="{{ path("articleDelete", {'id': a.id}) }}">Supprimer </a></td>
+        <td><a href ="{{ path("articleUpdate", {'id': a.id}) }}">MAJ </a></td>
+
+    </tr>
+    {% endfor %}
+
+</table>

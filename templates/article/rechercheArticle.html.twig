@@ -1,0 +1,19 @@
+<h1>Recherche article</h1>
+<form action="" method="post">
+    Nom : <input type="text" name="input_nom">
+    <input type="submit" value="Rechercher">
+</form>
+{% if articles is empty %}
+Aucune voiture trouvée
+{% else %}
+    <table border="1">
+        <tr>
+            <td>Nom</td>
+        </tr>
+        {% for a in articles %}
+          <tr>
+              <td>{{ a.nom }}</td>
+          </tr>
+        {% endfor %}
+    </table>
+{% endif %}
